@@ -1,0 +1,24 @@
+module P2PUsage;
+
+uses VariablesModule;
+
+@Alert(name='P2PUsage',outID=1)
+@Name('P2PUsage')
+@Enrich(dst="alert_severity",type="cmd",param="echo Low")
+@Enrich(dst="alert_type",type="cmd",param="echo Policy Violation")
+@Description("BitTorrent P2P traffic detected.")
+SELECT window(outcoming.*) as outcoming, window(incoming.*) as incoming, coalesce(outcoming.src_ip,incoming.dst_ip) as src_ip
+	FROM suricata(
+	(alert("signature").toString() LIKE "ET P2P%" 
+	OR alert("signature").toString() LIKE "PUA-P2P%"
+	) AND ( tags.contains("local") AND
+	src_ip NOT IN (proxy_whitelist))).win:time(10 min) as outcoming
+	FULL OUTER JOIN 
+	suricata(
+        (alert("signature").toString() LIKE "ET P2P%"
+        OR alert("signature").toString() LIKE "PUA-P2P%"
+        ) AND NOT tags.contains("local")).win:time(10 min) as incoming
+	on outcoming.src_ip = incoming.dst_ip
+GROUP BY outcoming.src_ip
+HAVING count(*) >= 5
+output first every 15 min;

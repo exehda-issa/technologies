@@ -1,0 +1,7 @@
+module VariablesModule;
+
+// sensors in the white_list
+create constant variable string[] sensors_whitelist = {$SENSOR_IPs};
+
+// proxies and winst in the whitelist
+create constant variable string[] proxy_whitelist = {$WINST_IPs, $PROXIES_IPs};

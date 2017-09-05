@@ -1,0 +1,170 @@
+Międzynarodowa Umowa Licencyjna na Program
+
+Część 1 - Warunki ogólne
+
+POBIERANIE, INSTALOWANIE, KOPIOWANIE ORAZ UŻYWANIE PROGRAMU OZNACZA AKCEPTACJĘ WARUNKÓW NINIEJSZEJ UMOWY. ZAAKCEPTOWANIE PRZEZ UŻYTKOWNIKA WARUNKÓW NINIEJSZEJ UMOWY W IMIENIU OSOBY TRZECIEJ (FIZYCZNEJ LUB PRAWNEJ) OZNACZA, ŻE UŻYTKOWNIK GWARANTUJE POSIADANIE UPRAWNIEŃ DO PODPORZĄDKOWANIA TAKIEJ OSOBY (FIZYCZNEJ LUB PRAWNEJ) NINIEJSZYM WARUNKOM. JEŚLI UŻYTKOWNIK NIE WYRAŻA ZGODY NA NINIEJSZE WARUNKI,
+
+- NIE BĘDZIE POBIERAĆ, INSTALOWAĆ, KOPIOWAĆ ANI UŻYWAĆ TEGO PROGRAMU ORAZ 
+
+- NATYCHMIAST ZWRÓCI PROGRAM ORAZ DOKUMENT PROOF OF ENTITLEMENT OSOBIE, OD KTÓREJ NABYŁ PROGRAM, ABY UZYSKAĆ ZWROT ZAPŁACONEJ KWOTY. W PRZYPADKU POBRANIA PROGRAMU DROGĄ ELEKTRONICZNĄ UŻYTKOWNIK WINIEN SKONTAKTOWAĆ SIĘ ZE ŹRÓDŁEM, Z KTÓREGO POBRAŁ PROGRAM.
+
+Termin "IBM" lub "firma IBM" oznacza firmę International Business Machines Corporation lub jedno z jej przedsiębiorstw podporządkowanych.
+
+Termin "Informacje licencyjne" oznacza dokument zawierający informacje specyficzne dla Programu. Informacje licencyjne dla Programu są dostępne pod adresem http://www.ibm.com/software/sla/. Informacje licencyjne można też znaleźć w pliku umieszczonym w katalogu Programu, używając komend systemowych. Dokument ten może być również dołączony do Programu w postaci broszury.
+
+Termin "Program" oznacza oryginał oraz pełne lub częściowe kopie: 1) instrukcji i danych w formie zapisu maszynowego,  2) komponentów, 3) zapisów audiowizualnych (takich jak obrazy, tekst, nagrania lub ilustracje), 4) odnoszących się do Programu materiałów licencjonowanych oraz 5) dokumentów dotyczących licencjonowanego używania i kluczy oraz innej dokumentacji. 
+
+Termin "Dokument Proof of Entitlement" ("Dokument PoE") oznacza dokument stanowiący dowód posiadania przez Użytkownika prawa do używania Programu na określonym poziomie. Poziom ten jest wyznaczony na przykład przez liczbę procesorów lub użytkowników. Dokument PoE stanowi również dowód uprawniający Użytkownika do korzystania z gwarancji, z cen obowiązujących na kolejne aktualizacje, jeśli takowe mają zastosowanie, oraz specjalnych ofert i promocji. Jeśli IBM nie udostępni Użytkownikowi dokumentu PoE, wówczas IBM może zaakceptować oryginalny opłacony rachunek lub inny dokument potwierdzający sprzedaż, otrzymany od podmiotu, od którego Użytkownik nabył Program (IBM lub reselera IBM) pod warunkiem, że na dokumencie takim wyszczególniona jest nazwa nabytego Programu oraz poziom wykorzystania.
+
+Termin "Użytkownik", występujący w różnych przypadkach, oznacza albo osobę fizyczną, albo osobę prawną.
+
+Niniejsza Umowa składa się z Części 1 - Warunki ogólne, Części 2 - Warunki specyficzne dla poszczególnych krajów (jeśli mają zastosowanie), Informacji licencyjnych oraz dokumentu Proof of Entitlement, które tworzą kompletną umowę między Użytkownikiem i IBM dotyczącą używania Programu. Umowa ta zastępuje wszelkie wcześniejsze ustne lub pisemne ustalenia dokonane między Użytkownikiem i IBM w zakresie używania Programu. Warunki zawarte w Części 2 oraz warunki dokumentu Informacje licencyjne mogą zastąpić lub zmodyfikować warunki Części 1. W zakresie, w jakim pojawiają się sprzeczności między warunkami niniejszej Umowy i Międzynarodowej Umowy IBM Passport Advantage, warunki Międzynarodowej Umowy IBM Passport Advantage mają znaczenie rozstrzygające.
+
+1. Uprawnienia
+
+Licencja
+
+Program ten jest własnością IBM lub dostawcy IBM. Program ten jest chroniony prawem autorskim i stanowi przedmiot umowy licencyjnej, a nie umowy sprzedaży.
+
+IBM udziela Użytkownikowi niewyłącznej licencji na Program, jeśli Program ten został nabyty legalnie.
+
+Użytkownik ma prawo 1) używać Programu do poziomu wykorzystania, określonego w dokumencie PoE oraz 2) wykonywać i instalować kopie, w tym kopię zapasową, potrzebne do takiego używania. Warunki niniejszej licencji mają zastosowanie do każdej wykonanej przez Użytkownika kopii Programu. Użytkownik odtworzy wszelkie uwagi dotyczące praw autorskich oraz wszelkie informacje o prawach własności na każdej pełnej lub częściowej kopii Programu.
+
+Jeśli Użytkownik nabędzie Program jako aktualizację, to po zainstalowaniu takiej aktualizacji Użytkownik traci prawo do używania Programu będącego przedmiotem aktualizacji oraz prawo do przeniesienia takiego Programu na osobę trzecią.
+
+Użytkownik zapewnia, że jakakolwiek osoba korzystająca z Programu (lokalnie lub zdalnie) dokonuje tego jedynie w ramach posiadanej autoryzacji na używanie oraz przestrzega warunków niniejszej Umowy.
+
+Użytkownik nie może 1) używać, kopiować, modyfikować ani dystrybuować Programu z wyjątkiem sytuacji przewidzianych w niniejszej Umowie; 2) deasemblować, dekompilować Programu ani dokonywać jego translacji w inny sposób, z wyjątkiem sytuacji dozwolonych przez bezwzględnie obowiązujące przepisy prawa; ani też 3) udzielać dalszych licencji na Program, wynajmować go ani wydzierżawiać.
+
+IBM ma prawo wypowiedzieć licencję udzieloną Użytkownikowi w przypadku niewypełnienia przez Użytkownika warunków niniejszej Umowy. W razie wypowiedzenia umowy przez IBM Użytkownik jest zobowiązany do zniszczenia wszelkich egzemplarzy Programu oraz odnoszących się do nich dokumentów PoE.
+
+Gwarancja zwrotu pieniędzy
+
+Jeśli z jakiegokolwiek powodu Użytkownik nie jest zadowolony z Programu, a jest pierwotnym licencjobiorcą, wówczas może uzyskać zwrot kwoty zapłaconej za ten Program pod warunkiem zwrotu Programu oraz odnoszącego się do Programu dokumentu PoE do osoby, od której Program został nabyty, w ciągu 30 dni do daty faktury. W przypadku pobrania Programu drogą elektroniczną Użytkownik może skontaktować się ze źródłem, z którego pobrał Program, aby otrzymać instrukcje dotyczące uzyskania zwrotu kwoty.
+
+Przeniesienie Programu
+
+Użytkownik może przenieść Program oraz wszelkie przysługujące mu prawa i obowiązki licencyjne na osobę trzecią pod warunkiem, że osoba taka zaakceptuje warunki niniejszej Umowy. Wraz z przeniesieniem Programu Użytkownik jest zobowiązany do przeniesienia egzemplarza niniejszej Umowy wraz z dokumentem PoE dla Programu. Użytkownik nie może używać Programu po dokonaniu przeniesienia.
+
+2. Opłaty
+
+Opłata za licencję na Program jest opłatą jednorazową.
+
+Opłaty jednorazowe są naliczane w oparciu o nabyty poziom wykorzystania, określony w dokumencie PoE. IBM nie zwraca wcześniej wniesionych lub należnych opłat ani nie uwzględnia ich w rozliczeniach, chyba że niniejsza Umowa stanowi inaczej.
+
+Jeśli Użytkownik chciałby podwyższyć poziom wykorzystania Programu, powinien powiadomić o tym IBM lub osobę, od której nabył Program, oraz uiścić odpowiednie opłaty.
+
+Jeśli dostarczenie niniejszego Programu wymaga zapłacenia cła, podatku, akcyzy lub innych opłat na rzecz jakichkolwiek urzędów, z wyjątkiem obciążeń wiążących się z uzyskaniem przychodu netto przez IBM, Użytkownik wyraża zgodę na zapłacenie odpowiedniej kwoty wskazanej przez IBM lub zobowiązuje się przedstawić dowód zwolnienia od danej opłaty. Od daty nabycia Programu Użytkownik ponosi odpowiedzialność z tytułu należnego podatku pośredniego.
+
+3. Ograniczona gwarancja
+
+IBM gwarantuje, że Program używany w określonym środowisku pracy będzie działać zgodnie ze Specyfikacjami. Gwarancja ma zastosowanie jedynie do niezmodyfikowanych fragmentów Programu. IBM nie gwarantuje nieprzerwanego lub wolnego od błędów działania Programu, ani też usunięcia wszystkich defektów Programu. Użytkownik jest odpowiedzialny za wyniki używania Programu. 
+
+IBM zapewnia Użytkownikowi bezpłatny dostęp do baz danych IBM zawierających informacje na temat znanych defektów Programu, poprawek dla defektów, ograniczeń i możliwości obejścia tychże defektów. Więcej informacji na ten temat można znaleźć w podręczniku operacyjnym IBM dotyczącym wsparcia dla oprogramowania (IBM Software Support Guide) pod adresem http://www.ibm.com/software/support. IBM będzie przechowywać te informacje przez okres co najmniej jednego roku od chwili nabycia Programu przez pierwotnego licencjobiorcę ("Okres gwarancyjny").
+
+W przypadku, gdy w Okresie gwarancyjnym Program nie działa zgodnie z gwarancją, a problemu nie można rozwiązać, korzystając z informacji dostępnych w bazach danych IBM, Użytkownik ma prawo zwrócić Program i odnoszący się do niego dokument PoE podmiotowi, od którego nabył Program (IBM lub reselerowi IBM) i otrzymać zwrot zapłaconej kwoty. W przypadku pobrania Programu drogą elektroniczną Użytkownik może skontaktować się ze źródłem, z którego pobrał Program, aby dowiedzieć się, w jaki sposób uzyskać zwrot kwoty.
+
+NINIEJSZE GWARANCJE SĄ WYŁĄCZNYMI GWARANCJAMI UDZIELANYMI UŻYTKOWNIKOWI I ZASTĘPUJĄ WSZELKIE INNE GWARANCJE LUB WARUNKI (W TYM TAKŻE RĘKOJMIĘ), WYRAŹNE LUB DOMNIEMANE, A W SZCZEGÓLNOŚCI DOMNIEMANE GWARANCJE LUB WARUNKI PRZYDATNOŚCI HANDLOWEJ LUB PRZYDATNOŚCI DO OKREŚLONEGO CELU. USTAWODAWSTWA NIEKTÓRYCH KRAJÓW NIE DOPUSZCZAJĄ WYŁĄCZENIA WYRAŹNYCH LUB DOMNIEMANYCH GWARANCJI. W ZWIĄZKU Z TYM POWYŻSZE WYŁĄCZENIE MOŻE NIE MIEĆ ZASTOSOWANIA W PRZYPADKU NIEKTÓRYCH UŻYTKOWNIKÓW. W TAKIM PRZYPADKU CZAS TRWANIA TAKICH GWARANCJI JEST OGRANICZONY DO OKRESU GWARANCYJNEGO. PO TYM OKRESIE NIE BĘDĄ OBOWIĄZYWAĆ ŻADNE GWARANCJE. USTAWODAWSTWA NIEKTÓRYCH KRAJÓW NIE DOPUSZCZAJĄ OGRANICZENIA CZASU TRWANIA GWARANCJI DOMNIEMANYCH, W ZWIĄZKU Z TYM POWYŻSZE OGRANICZENIE MOŻE NIE MIEĆ ZASTOSOWANIA W PRZYPADKU NIEKTÓRYCH UŻYTKOWNIKÓW.
+
+UŻYTKOWNIKOWI PRZYSŁUGUJĄ SPECJALNE PRAWA Z TYTUŁU NINIEJSZYCH GWARANCJI, A TAKŻE INNE PRAWA, W ZALEŻNOŚCI OD OBOWIĄZUJĄCEGO W DANYM KRAJU USTAWODAWSTWA.
+
+4. Ograniczenie odpowiedzialności
+
+W przypadku wystąpienia określonych okoliczności, za które odpowiedzialność ponosi IBM, a w wyniku których Użytkownik doznał szkody, Użytkownik będzie uprawniony do uzyskania od IBM odszkodowania. W każdym takim przypadku, bez względu na podstawę, na jakiej Użytkownik jest uprawniony do domagania się odszkodowania od IBM (włączywszy w to naruszenie istotnych postanowień niniejszej Umowy, niedbalstwo, wprowadzenie w błąd lub inne roszczenia z tytułu odpowiedzialności kontraktowej lub deliktowej), odpowiedzialność IBM ogranicza się jedynie do 1) odpowiedzialności za uszczerbek na zdrowiu (łącznie ze śmiercią) oraz za szkody wyrządzone w nieruchomościach lub majątku ruchomym, a 2) w przypadku innych rzeczywiście poniesionych szkód - do wysokości opłat za Program, będący przedmiotem roszczenia.
+
+Niniejsze ograniczenie odpowiedzialności ma zastosowanie także do programistów i dostawców Programów IBM. Wskazany powyżej zakres odpowiedzialności stanowi całość odpowiedzialności ponoszonej przez IBM. 
+
+W ŻADNYCH OKOLICZNOŚCIACH IBM, ANI TEŻ PROGRAMIŚCI CZY DOSTAWCY PROGRAMÓW IBM, NIE PONOSZĄ ODPOWIEDZIALNOŚCI ZA PONIŻSZE SZKODY, NAWET JEŚLI ZOSTALI POINFORMOWANI O MOŻLIWOŚCI ICH WYSTĄPIENIA:
+
+1. UTRATĘ LUB USZKODZENIE DANYCH;
+
+2. SZKODY SZCZEGÓLNE, UBOCZNE, POŚREDNIE ORAZ SZKODY, KTÓRYCH NIE MOŻNA BYŁO PRZEWIDZIEĆ PRZY ZAWIERANIU UMOWY, ANI TEŻ
+
+3. UTRACONE ZYSKI, KONTAKTY HANDLOWE, DOCHODY, REPUTACJĘ (GOODWILL) ANI TEŻ PRZEWIDYWANE OSZCZĘDNOŚCI.
+
+USTAWODAWSTWA NIEKTÓRYCH KRAJÓW NIE PRZEWIDUJĄ WYŁĄCZENIA LUB OGRANICZENIA ODPOWIEDZIALNOŚCI Z TYTUŁU SZKÓD UBOCZNYCH LUB SZKÓD, KTÓRYCH NIE MOŻNA BYŁO PRZEWIDZIEĆ PRZY ZAWIERANIU UMOWY, DLATEGO TEŻ POWYŻSZE WYŁĄCZENIA LUB OGRANICZENIA MOGĄ NIE MIEĆ ZASTOSOWANIA W PRZYPADKU NIEKTÓRYCH UŻYTKOWNIKÓW.
+
+5. Postanowienia ogólne
+
+1. Postanowienia zawarte w niniejszej Umowie pozostają bez wpływu na uprawnienia przysługujące konsumentom, które nie mogą być wyłączone lub ograniczone na podstawie bezwzględnie obowiązujących przepisów prawa.
+
+2. W przypadku nieważności lub niewykonalności któregokolwiek z postanowień niniejszej Umowy, pozostałe postanowienia niniejszej Umowy zachowują pełną moc prawną i skuteczność.
+
+3. Użytkownik zobowiązuje się przestrzegać wszelkich obowiązujących praw i przepisów eksportowych i importowych.
+
+4. Użytkownik zezwala IBM na przechowywanie informacji kontaktowych oraz na korzystanie z nich, włączając w to imiona i nazwiska, numery telefonów i adresy poczty elektronicznej, bez względu na miejsce prowadzenia działalności. Informacje takie będą przetwarzane i wykorzystywane w związku z prowadzoną działalnością i mogą być udostępnione wykonawcom, Partnerom Handlowym lub cesjonariuszom IBM, jeśli informacje te mają związek z prowadzoną przez nich działalnością, w tym w celu utrzymywania kontaktu z Użytkownikiem (np. w celu przetwarzania zamówień, promocji i prowadzenia badań marketingowych).
+
+5. Wszelkie roszczenia związane z realizacją niniejszej Umowy ulegają przedawnieniu po upływie dwóch lat od powstania przyczyny takich roszczeń, chyba że bezwzględnie obowiązujące przepisy prawa stanowią inaczej.
+
+6. Ani Użytkownik, ani IBM nie odpowiadają za niedopełnienie jakichkolwiek obowiązków, jeśli przyczyny takiego niedopełnienia leżały poza ich kontrolą.
+
+7. Niniejsza Umowa nie daje osobom trzecim jakichkolwiek praw ani też podstawy do roszczeń, a IBM nie ponosi odpowiedzialności za jakiekolwiek roszczenie osób trzecich wobec Użytkownika, chyba że zezwalają na to warunki powyższego paragrafu "Ograniczenie odpowiedzialności" w części dotyczącej uszczerbku na zdrowiu (łącznie ze śmiercią) lub szkód wyrządzonych w nieruchomościach lub w majątku ruchomym, za które IBM ponosi odpowiedzialność prawną.
+
+6. Obowiązujące ustawodawstwo, jurysdykcja i arbitraż
+
+Obowiązujące ustawodawstwo
+
+Obie Strony przyjmują jako obowiązujące prawo kraju, w którym licencja na Program została nabyta, oraz wyrażają zgodę na stosowanie takiego prawa przy interpretowaniu oraz egzekwowaniu wszelkich praw i obowiązków Stron, wynikających z niniejszej Umowy lub mających w jakikolwiek sposób z nią związek, bez odwoływania się do norm kolizyjnych dotyczących przepisów prawnych. 
+
+Konwencja ONZ dotycząca umów o Międzynarodowej Sprzedaży Towarów (United Nations Convention on Contracts for the International Sale of Goods) nie ma zastosowania.
+
+Jurysdykcja
+
+Wszelkie prawa, obowiązki i zobowiązania IBM podlegają właściwym sądom kraju nabycia licencji na Program.
+
+Część 2 - Warunki specyficzne dla poszczególnych krajów
+
+EUROPA, BLISKI WSCHÓD, AFRYKA (EUROPE, MIDDLE EAST, AFRICA - EMEA)
+
+Obowiązujące ustawodawstwo, jurysdykcja i arbitraż (paragraf 6)
+
+Obowiązujące ustawodawstwo
+
+Sformułowanie "prawo kraju, w którym licencja na Program została nabyta" zostaje zastąpione sformułowaniem "prawo Austrii". Zasada ta dotyczy Polski.
+
+Arbitraż
+
+W Polsce, wszelkie kwestie sporne wynikające z niniejszej Umowy lub związane z jej naruszeniem, wypowiedzeniem lub nieważnością będą rozstrzygane w sposób ostateczny zgodnie z Zasadami Postępowania Arbitrażowego i Ugodowego Międzynarodowego Centrum Arbitrażu przy Federalnej Izbie Gospodarczej (Rules of Arbitration and Conciliation of the International Arbitral Center of the Austrian Federal Economic Chamber) w Wiedniu (Vienna Rules), przez trzech arbitrów, powołanych zgodnie ze wspomnianymi zasadami. Arbitraż będzie miał miejsce w Wiedniu, w Austrii. Językiem obowiązującym podczas postępowania będzie język angielski. Orzeczenia arbitrów będą ostateczne i wiążące dla obu Stron. Oznacza to, że zgodnie z artykułem 598(2) Austriackiego Kodeksu Postępowania Cywilnego (Austrian Code of Civil Procedure), Strony rezygnują ze stosowania artykułu 595(1) punkt 7 tego Kodeksu. Tym niemniej powyższe warunki w żadnym stopniu nie ograniczają prawa IBM do wszczęcia postępowania przed dowolnym właściwym sądem w kraju instalacji.
+
+Z125-3301-12 (11/2002)
+
+
+INFORMACJE LICENCYJNE
+
+Wymienione poniżej Programy są licencjonowane na poniższych warunkach, które uzupełniają warunki Międzynarodowa Umowa Licencyjna na Program Z125-3301-12.
+
+Nazwa Programu: IBM Data Server Driver for JDBC and SQLJ V3.64
+Numer Programu: Tool
+
+Prawa do ograniczonego używania Innych Programów IBM
+
+Jeśli Użytkownik nabył ten Program jako część innego programu IBM (zwanego dalej "Programem Głównym", w którego licencji Program ten będzie wymieniony pod nagłówkiem "Inne Programy IBM"), Użytkownik otrzymuje ten Program jedynie do obsługi Programu Głównego, zaś jego prawo do używania Programu ogranicza licencja na Program Główny. Jeśli Użytkownik chce nabyć oddzielną licencję na ten Program, nieograniczoną warunkami licencji na Program Główny, powinien skontaktować się z przedstawicielem handlowym IBM.
+
+Informacje dotyczące redystrybucji
+
+Jeśli Użytkownik stworzył aplikację zależną od plików lub modułów wymienionych poniżej lub znajdujących się w wymienionym poniżej katalogu, może dystrybuować takie pliki lub moduły (zwane dalej "Elementami Podlegającymi Redystrybucji") na następujących warunkach:
+1) Elementy Podlegające Redystrybucji muszą mieć postać kodu wynikowego i być zgodne ze wszystkimi wskazówkami, instrukcjami i specyfikacjami w dokumentacji Programu. Jeśli dokumentacja Programu wyraźnie zezwala na modyfikowanie Elementów Podlegających Redystrybucji, wówczas takie modyfikacje muszą być zgodne ze wszystkimi wskazówkami, instrukcjami i specyfikacjami w dokumentacji Programu. Takie ewentualne modyfikacje obejmuje definicja Elementów Podlegających Redystrybucji.
+2) Użytkownik może dystrybuować Elementy Podlegające Redystrybucji jedynie jako część swojej aplikacji opracowanej z użyciem Programu i jedynie do obsługi swoich klientów w związku z korzystaniem przez nich z aplikacji Użytkownika.
+3) Użytkownik będzie zabezpieczać i chronić IBM, dostawców IBM oraz dystrybutorów IBM przed wszelkimi roszczeniami osób trzecich, wynikającymi z używania lub rozpowszechniania aplikacji Użytkownika.
+4) Użytkownik nie może korzystać ze ścieżek o tej samej nazwie, co ścieżki do Elementów Podlegających Redystrybucji ani usuwać żadnych plików z uwagami dotyczącymi praw autorskich i innymi zawartych w Elementach Podlegających Redystrybucji.
+5) Użytkownik nie może wykorzystywać - w związku z czynnościami marketingowymi odnoszącymi się do Aplikacji Użytkownika - nazw ani znaków towarowych IBM, dostawców IBM ani dystrybutorów IBM bez ich wcześniejszej pisemnej zgody.
+6) IBM, dostawcy IBM i dystrybutorzy IBM dostarczają Elementy Podlegające Redystrybucji oraz ich dokumentację W STANIE, W JAKIM SIĘ ZNAJDUJE ("AS IS"), BEZ UDZIELANIA JAKICHKOLWIEK GWARANCJI (W TYM TAKŻE RĘKOJMI), WYRAŹNYCH LUB DOMNIEMANYCH, A W SZCZEGÓLNOŚCI GWARANCJI PRAWA WŁASNOŚCI, NIENARUSZANIA PRAW OSÓB TRZECICH ORAZ DOMNIEMANYCH GWARANCJI i WARUNKÓW PRZYDATNOŚCI HANDLOWEJ I PRZYDATNOŚCI DO OKREŚLONEGO CELU. CAŁE RYZYKO WYNIKAJĄCE Z UŻYWANIA ELEMENTÓW PODLEGAJĄCYCH REDYSTRYBUCJI SPOCZYWA NA UŻYTKOWNIKU. W ŻADNYM PRZYPADKU IBM NIE BĘDZIE PONOSIĆ ODPOWIEDZIALNOŚCI ZA UTRACONE KORZYŚCI, ZA SZKODY UBOCZNE, BEZPOŚREDNIE I POŚREDNIE, ORAZ SZKODY, KTÓRYCH NIE MOŻNA BYŁO PRZEWIDZIEĆ PRZY ZAWIERANIU UMOWY, NAWET JEŚLI IBM LUB UPOWAŻNIONY DOSTAWCA LUB DYSTRYBUTOR IBM BYLI POINFORMOWANI O MOŻLIWOŚCI WYSTĄPIENIA TAKICH SZKÓD W ZAKRESIE ELEMENTÓW PODLEGAJĄCYCH REDYSTRYBUCJI LUB EWENTUALNEGO WSPARCIA TECHNICZNEGO.
+7) Użytkownik ponosi odpowiedzialność za wszelką pomoc techniczną dotyczącą aplikacji Użytkownika oraz wszelkich modyfikacji Elementów Podlegających Redystrybucji.
+8) Użytkownik powiadomi użytkowników końcowych, w zawartej z nimi umowie licencyjnej, że Elementy Podlegające Redystrybucji lub ich modyfikacje nie mogą być 1) używane do celów innych niż uruchomienie aplikacji Użytkownika, 2) kopiowane (z wyjątkiem tworzenia kopii zapasowych), 3) dalej dystrybuowane bez aplikacji Użytkownika, 4) deasemblowane, dekompilowane ani poddawane translacji w inny sposób.
+9) Użytkownik zgadza się oznaczyć swoją aplikację zawierającą Elementy Podlegające Redystrybucji następującą etykietą:
+"Zawiera Materiały Licencjonowane IBM.
+Copyright IBM Corporation 2012"
+
+Poniżej wymieniono Elementy Podlegające Redystrybucji licencjonowane z Programami:
+db2jcc.jar
+db2jcc4.jar
+sqlj.zip
+sqlj4.zip
+
+Określone środowisko pracy
+
+Specyfikacje dla Programu oraz informacje dotyczące określonego środowiska pracy można znaleźć w dokumentacji dołączonej do Programu, jeśli takowa jest dostępna, takiej jak plik readme lub w innych informacjach opublikowanych przez IBM, na przykład w dokumentach announcement letter. Użytkownik zgadza się, że taka dokumentacja oraz inne treści związane z Programem mogą być dostarczane tylko w języku angielskim.
+
+L/N:  L-DNAA-8THRGY
+D/N:  L-DNAA-8THRGY
+P/N:  L-DNAA-8THRGY 

@@ -1,0 +1,12 @@
+module SSHBruteforce;
+
+@Name('SSHBruteforce')
+@Alert(name='SSHBruteforce',outID=1)
+@Enrich(dst="alert_severity",type="cmd",param="echo Low")
+@Enrich(dst="alert_type",type="cmd",param="echo Network")
+// The following command applies a personalized script
+@Enrich(dst="action",type="cmd",param="/home/user/CorReactive/conf/actions/ossec_command.sh --attacker-ip %{src_ip} --server-ip %{dst_ip}")
+select window(*),Arrays.toString(window(dst_ip)) as dst_ip,src_ip from suricata(alert("signature").toString() in ("ET SCAN SSH BruteForce Tool with fake PUTTY version", "ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack")).win:time(10 min)
+group by src_ip
+having count(*) >= 5
+output first every 15 min;

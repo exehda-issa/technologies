@@ -1,0 +1,30 @@
+{
+	"httpPort":2015,	
+	"inputs":[
+		{
+			"type": "redis",
+			"config":{ 
+				"host": "localhost",
+				"port": 6379,
+				"db": 0,
+				"queue":"events",
+				"batch_count":500,
+				"reconnect_timeout":30
+			}
+		}
+	],
+	"outputs":[
+		{
+			"type":"redis",
+			"id":1,
+			"config":{
+				"host": "localhost",
+				"queue":"alerts",
+				"port": 6379,
+				"db": 0,
+				"reconnect_timeout":30,
+				"batch_count":1
+			}
+		}
+	]
+}

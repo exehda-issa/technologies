@@ -1,0 +1,10 @@
+module Trojan;
+
+@Alert(name='Trojan',outID=1)
+@Name('Trojan')
+@Enrich(dst="alert_severity",type="cmd",param="echo High")
+@Enrich(dst="alert_type",type="cmd",param="echo Malware")
+select window(*),src_ip from suricata(alert("signature").toString() like "ET TROJAN%" and src_ip not in (proxy_whitelist)).win:time(10 min)
+group by src_ip
+having count(*) >= 3
+output first every 15 min;

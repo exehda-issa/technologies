@@ -1,0 +1,10 @@
+module CommandAndControl;
+
+@Alert(name='CommandAndControl',outID=1)
+@Name('CommandAndControl')
+@Enrich(dst="alert_severity",type="cmd",param="echo High")
+@Enrich(dst="alert_type",type="cmd",param="echo C2Communication")
+select window(*),src_ip,window(dst_ip) from suricata(alert("signature").toString() like "ET CNC%" and src_ip not in (proxy_whitelist)).win:time(10 min)
+group by src_ip
+having count(*) >= 3
+output first every 15 min;

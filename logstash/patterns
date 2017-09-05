@@ -1,0 +1,171 @@
+#POSTGREY
+POSTGREY action=%{NOTSPACE:action}, reason=%{DATA:reason}( \(%{NUMBER:sec_miss:int}s missing\))?,( delay=%{NUMBER:delay:int},)? client_name=%{NOTSPACE:client_name}, client_address=%{IP:src_ip},( sender=%{NOTSPACE:sender},)? recipient=%{NOTSPACE:receiver}
+
+#Bitdefender
+BD_TIMESTAMP \S+ \S+
+BD_SPAM \A%{BD_TIMESTAMP:timestamp} BDMAILD SPAM: sender: %{DATA:sender}, recipients: %{NOTSPACE:recipient}, sender IP: %{IP:src_ip}, subject: \"%{DATA:subject}\"(, message-id: \"<%{NOTSPACE:message-id}>\", , score: %{NUMBER:score})?
+
+BD_CF \A%{BD_TIMESTAMP:timestamp} BDMAILD CONTENTFILTER: sender: %{DATA:sender}, recipients: %{NOTSPACE:receiver}, subject: \'%{DATA:subject}\', header recipients: \(%{DATA:header_recipients}\), CF rule: %{NUMBER:rule_id} %{DATA:rule_description}, CF action: %{DATA:action},
+
+
+#Webmail
+WEBMAILTIMESTAMP \S+ \S+ \S+
+MAIL_LOGIN %{NOTSPACE} %{NOTSPACE:auth} login for %{NOTSPACE:user} (\(ID: %{NOTSPACE}\) )?from %{IP:ip} in session %{NOTSPACE}
+MAIL_SENT %{NOTSPACE} User %{NOTSPACE:user} \[%{NOTSPACE:ip}\]; Message for %{GREEDYDATA:recipient}; %{NUMBER:code}%{GREEDYDATA} as %{NOTSPACE:queue}
+MAIL_PASS_CHANGE %{NOTSPACE} Password changed for user %{NOTSPACE:user} \(ID: %{NUMBER:id}\) from %{NOTSPACE:ip}
+
+#Custom Firewall Pattern
+FIREWALLCUSTOM .?*(Firewall|Shorewall):(%{NOTSPACE:origin}):(%{WORD:action}):IN=(%{USERNAME:in_interface})?.*(OUT= *MAC=(%{COMMONMAC:dst_mac}):(%{COMMONMAC:src_mac})?|OUT=%{USERNAME:out_interface}).*SRC=(%{IPV4:src_ip}).*DST=(%{IPV4:dst_ip}).*LEN=(%{WORD:len}).?*TOS=(%{WORD:tos}).?*PREC=(%{WORD:prec}).?*TTL=(%{INT:ttl}).?*ID=(%{INT:id}).?*PROTO=(%{WORD:protocol}).?*SPT=(%{INT:src_port}?.*DPT=%{INT:dst_port}?.*)
+
+#BROIDS
+BROWEIRD \A%{NUMBER:timestamp}%{SPACE}%{NOTSPACE:uid}%{SPACE}%{IP:src_ip}%{SPACE}%{NOTSPACE:src_port}%{SPACE}%{IP:dst_ip}%{SPACE}%{NOTSPACE:dst_port}%{SPACE}%{NOTSPACE:name}%{SPACE}%{NOTSPACE:addl}%{SPACE}%{NOTSPACE:notice}%{SPACE}%{NOTSPACE:peer}
+#PostgreSQL
+POSTGRESQL %{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{WORD:tzone}%{SPACE}\[%{NONNEGINT:pid}\-%{NONNEGINT:pgsession}\]%{SPACE}\[?%{WORD:pguser}\]?@\[?%{WORD:pgdb}\]?%{SPACE}%{WORD:level}:%{SPACE}%{GREEDYDATA:mensagem}
+
+#IP Tables
+IPTABLES_DENIED %{SYSLOGTIMESTAMP:timestamp} %{HOSTNAME:_host} kernel: iptables denied: IN=(?<in>eth0) OUT= MAC=(?<mac_addr>\\S+) SRC=%{IP:src_ip} DST=%{IP:dst_ip} LEN=\\d+ TOS=0x\\d+ PREC=0x\\d+ TTL=\\d+ ID=\\d+(?:\\sDF)? PROTO=(?<proto>\\S+) SPT=(?<src_port>\\d+) DPT=(?<dst_port>\\d+)(?:\\sWINDOW=\\d+)?(?:\\sRES=0x\\d+)?(?:\\s[ACKSYNFIRT]{3})+(?:\\sURGP=\\d)?
+KIPPO_TIMESTAMP (?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})
+KIPPO_BODY_SSHSERVICE \\[SSHService ssh-userauth on HoneyPotTransport,\\d+,%{IP:src_ip>}\\]
+KIPPO_MSG_LOGIN login\\sattempt\\s\\[(?<src_user>\\S+)/(?<src_pwd>\\S+)\\]\\s(?<outcome>succeeded|failed)
+
+
+#NGINX ACCESS
+NGUSERNAME [a-zA-Z\.\@\-\+_%]+
+NGUSER %{NGUSERNAME}
+NGINXACCESS %{IPORHOST:src_ip} %{NGUSER:ident} %{NGUSER:auth} \[%{HTTPDATE:timestamp}\] "%{WORD:verb} %{URIPATHPARAM:request} HTTP/%{NUMBER:httpversion}" %{NUMBER:response} (?:%{NUMBER:bytes}|-) (?:"(?:%{URI:referrer}|-)"|%{QS:referrer}) %{QS:agent}
+
+
+#APACHE ERROR LOG
+MILLISEC \.[0-9]+
+APACHE_ERROR_TIME %{DAY} %{MONTH} %{MONTHDAY} %{TIME}(:?|%{MILLISEC}) %{YEAR}
+APACHE_ERROR_PREFIX \[%{APACHE_ERROR_TIME:timestamp}\] \[(:?|%{WORD:module})(:?|:)%{LOGLEVEL:loglevel}\]\s*(:?|(\[pid %{POSINT:pid:int}\]))\s*(?:\[client %{IPORHOST:src_ip}(:?|:%{POSINT:dst_port:int})\])?
+APACHE_ERROR_LOG (:?|%{DATA:errorcode}:) %{GREEDYDATA:errormsg}
+
+# ModSec Patterns apache2/error.log
+#MODSECPREFIX ModSecurity: (%{NOTSPACE:modsecseverity}\.|%{DATA:response_code}\.) (?:%{DATA:errormsg}\. )?
+MODSECPREFIX ModSecurity: ((%{NOTSPACE:modsecseverity}\.|%{DATA:response_code}\.) (?:%{DATA:errormsg}\. )?)|(%{DATA:errormsg} (?=\[))
+MODSECRULEFILE \[file "%{NOTSPACE:rulefile}"\]
+MODSECRULELINE \[line "%{POSINT:ruleline:int}"\]
+MODSECRULEID \[id "%{NOTSPACE:ruleid:int}"\]
+MODSECRULEREV \[rev "%{NOTSPACE:rulerev}"\]
+MODSECRULEMSG \[msg "%{DATA:rulemessage}"\]
+MODSECRULEDATA \[data "%{DATA:ruledata}"\]
+MODSECRULESEVERITY \[severity "%{NOTSPACE:ruleseverity}"\]
+MODSECRULEVERSION \[ver "%{NOTSPACE:ruleversion}"\]
+MODSECRULEMATURITY \[maturity "%{NOTSPACE:rulematurity:int}"\]
+MODSECRULEACCURACY \[accuracy "%{NOTSPACE:ruleaccuracy:int}"\]
+#MODSECRULETAGS (?:\[tag "%{NOTSPACE:ruletag0}"\] )?(?:\[tag "%{NOTSPACE:ruletag1}"\] )?(?:\[tag "%{NOTSPACE:ruletag2}"\] )?(?:\[tag "%{NOTSPACE:ruletag3}"\] )?(?:\[tag "%{NOTSPACE:ruletag4}"\] )?(?:\[tag "%{NOTSPACE:ruletag5}"\] )?(?:\[tag "%{NOTSPACE:ruletag6}"\] )?(?:\[tag "%{NOTSPACE:ruletag7}"\] )?(?:\[tag "%{NOTSPACE:ruletag8}"\] )?(?:\[tag "%{NOTSPACE:ruletag9}\s)?(?:\[tag "%{NOTSPACE}"\] )*
+MODSECRULETAG (\[tag "%{NOTSPACE:ruletags}"\] )
+MODSECHOSTNAME \[hostname "%{HOSTNAME:targethost}"\]
+MODSECURI \[uri "%{NOTSPACE:targeturi}"\]
+MODSECUID \[unique_id "%{NOTSPACE:uniqueid}"\]
+
+MODSECAPACHEERROR %{MODSECPREFIX}(?:%{MODSECRULEFILE} )?(?:%{MODSECRULELINE} )?(?:%{MODSECRULEID} )?(?:%{MODSECRULEREV} )?(?:%{MODSECRULEMSG} )?(?:%{MODSECRULEDATA} )?(?:%{MODSECRULESEVERITY} )?(?:%{MODSECRULEVERSION} )?(?:%{MODSECRULEMATURITY} )?(?:%{MODSECRULEACCURACY} )?(%{MODSECRULETAG})*%{MODSECHOSTNAME}\s*%{MODSECURI}\s*%{MODSECUID}
+
+# Syslog
+SYSLOGBASECUSTOM %{SYSLOGTIMESTAMP:timestamp} (?:%{SYSLOGFACILITY} )?%{SYSLOGHOST:logsource}\s*(?:%{SYSLOGPROG}:)?
+
+# Apache (access.log)
+COMMONAPACHELOGCUSTOM (%{IPORHOST:src_ip}|-) %{HTTPDUSER:ident} (%{USER:auth}|"") \[%{HTTPDATE:timestamp}\] "(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes:int}|-)
+COMBINEDAPACHELOGCUSTOM %{COMMONAPACHELOGCUSTOM}( ("(?:%{URI:referrer}|-)"|%{QS:referrer}) ("%{GREEDYDATA:agent}; %{URI:referrer}"|"%{GREEDYDATA:agent}"))?
+
+# Apache (rewrite.log)
+REWRITEDATE %{MONTHDAY}/%{MONTH}/%{YEAR}:%{TIME} -%{INT}
+APACHEREWRITE (%{IPORHOST:src_ip}|-) %{HTTPDUSER:ident} (%{USER:auth}|"") \[%{REWRITEDATE:timestamp}\] %{GREEDYDATA:rewritemsg}
+
+# OSSEC - alerts.log
+OSSECALERT AV - Alert - "%{NUMBER:timestamp}" --> RID: "%{POSINT:rule_id:int}"; RL: "%{POSINT:rule_level:int}"; RG: "%{DATA:rule_group}"; RC: "%{DATA:rule_comment}"; USER: "(%{DATA:user}|\(no user\))"; SRCIP: "(%{IP:src_ip}|%{HOSTNAME:src_hostname}|None)"; HOSTNAME: "(%{HOSTNAME:hostname}|\(%{HOSTNAME:hostname}\) %{IP}->(%{PATH}|%{NOTSPACE}))"; LOCATION: "(%{PATH:location}|%{NOTSPACE:location}|\(%{HOSTNAME}\) %{IP}->(%{PATH:location}|%{NOTSPACE:location}))"; EVENT: "\[INIT\]%{DATA:event}\[END\]";
+# OSSEC - active-response.log
+ALERTID %{POSINT}.%{POSINT}
+MONTHB \w\w\w
+SYSLOGTIMESTAMPBR %{MONTHB} +%{MONTHDAY} %{TIME}
+OSSECTIME %{WORD} %{WORD:month}\s+%{NUMBER:dom} %{NOTSPACE:time} %{WORD} %{NUMBER:year}
+OSSECACTIVERESP %{OSSECTIME} %{NOTSPACE:command} %{WORD:action} (%{WORD:username}|-) %{IP:src_ip} (%{ALERTID:alert_id:int}|\(from_the_server\)) (%{NUMBER:rule_id:int}|\(no_rule_id\))
+
+# SWITCHES
+SWITCHES %{SYSLOGTIMESTAMP:timestamp} %{NOTSPACE:sw_name} \[%{LOGLEVEL:severity}\] src=%{IP:src_ip} %{GREEDYDATA:sw_msg}
+
+#### Dovecot standard presets
+RIP_LIP rip=%{IP:src_ip}, lip=%{IP:lip}
+DOVECOT_HEADER %{WORD:proto}-login: %{DATA:status_message}:
+TWO_WORDS \w+\s\w+
+LMTP lmtp
+
+# Email
+#EMAILADDRESSPART [a-zA-Z0-9_.+-=:]+
+#EMAILADDRESS %{USERNAME:user}@%{HOSTNAME:domain}
+USEROREMAIL %{USERNAME:user}(@%{HOSTNAME:domain})?
+#USEROREMAIL %{NOTSPACE}
+#### LOGINS
+# Successful logins pop3/imap
+# 1  pop3-login: Login: user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, mpid=8056, secured, session=<QWvifIcOtQBUFOyV>
+# 2  pop3-login: Login: user=<username@domain.com>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, mpid=8056, secured, session=<QWvifIcOtQBUFOyV>
+DOVECOT_LOGIN %{WORD:proto}-login: %{WORD:conn_status}: user=<(%{USEROREMAIL})?>, method=%{WORD:method}, rip=%{IP:rip}, lip=%{IP:lip}, mpid=%{NUMBER:mpid}(, %{WORD:crypto})?, session=<%{DATA:session}>
+#### DISCONNECTS
+# IMAP/POP3 successful logout
+# 3  imap(username): Disconnected: Logged out in=93 out=956
+# 4  pop3(username): Disconnected: Logged out top=0/0, retr=0/0, del=0/0, size=0
+# 5  imap(username): Disconnected: Disconnected in IDLE in=415 out=19066
+# 6  imap(username): Disconnected: Disconnected in APPEND (1 msgs, 0 secs, 0/215477 bytes) in=3166 out=144312
+# 7  pop3(username): Connection closed: Connection reset by peer top=0/0, retr=2/82331, del=6/168, size=50085176
+#
+DOVECOT_DISCONNECT1 %{WORD:proto}\(%{USERNAME:user}\): (%{TWO_WORDS:conn_status}|%{WORD:conn_status}): %{DATA:status_message} (in=%{NONNEGINT:bytes_in} out=%{NONNEGINT:bytes_out}|top=%{NUMBER}/%{NUMBER}, retr=%{NUMBER}/%{NUMBER}, del=%{NUMBER}/%{NUMBER}, size=%{NUMBER})
+# 8  imap(username): Connection closed in=4573 out=47788
+DOVECOT_DISCONNECT2 %{WORD:proto}\(%{USERNAME:user}\): %{TWO_WORDS:conn_status} (in=%{NONNEGINT:bytes_in} out=%{NONNEGINT:bytes_out}|top=%{NUMBER}/%{NUMBER}, retr=%{NUMBER}/%{NUMBER}, del=%{NUMBER}/%{NUMBER}, size=%{NUMBER})
+# 9  imap(username): Disconnected for inactivity in=687 out=10791
+DOVECOT_DISCONNECT3 %{WORD:proto}\(%{USERNAME:user}\): %{WORD:conn_status} %{DATA:status_message} (in=%{NONNEGINT:bytes_in} out=%{NONNEGINT:bytes_out}|top=%{NUMBER}/%{NUMBER}, retr=%{NUMBER}/%{NUMBER}, del=%{NUMBER}/%{NUMBER}, size=%{NUMBER})
+# Authentation failed
+# 10  imap-login: Disconnected (auth failed, 1 attempts in 4 secs): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, secured, session=<afeKFIcOYgAFPe0N>
+# 11  pop3-login: Aborted login (auth failed, 1 attempts): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5
+# 12  pop3-login: Aborted login (auth failed, 1 attempts): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, TLS
+# 13  pop3-login: Aborted login (auth failed, 1 attempts): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, session=<afeKFIcOYgAFPe0N>
+# 14  pop3-login: Aborted login (auth failed, 1 attempts): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, secured, session=<23hKXMAPuwBZ1MSq>
+#DOVECOT_DISCONNECT4 %{WORD:proto}-login: (%{TWO_WORDS:conn_status}|%{WORD:conn_status}) \(%{DATA:status_message}\): user=<(%{USEROREMAIL:user})?>, method=%{WORD:method}, rip=%{IP:rip}, lip=%{IP:lip}, %{WORD:crypto}, session=<%{DATA:session}>
+
+DOVECOT_DISCONNECT4 %{WORD:proto}-login: (%{TWO_WORDS:conn_status}|%{WORD:conn_status}) \(%{DATA:status_message}\): user=<(%{USEROREMAIL:user})?>, method=%{WORD:method}, rip=%{IP:rip}, lip=%{IP:lip}, %{WORD:crypto}(\,|:)?( %{DATA:error},)?( session=<%{DATA:session}>)?
+# No auth attempt
+# 15  imap-login: Disconnected (no auth attempts in 0 secs): user=<>, rip=2.2.2.2, lip=5.5.5.5, TLS handshaking, session=<ssjRzuwPIwBZ1Ck5>
+# 16  pop3-login: Disconnected (no auth attempts in 75 secs): user=<>, rip=2.2.2.2, lip=5.5.5.5, TLS: Disconnected, session=<u3bbz+wPcgAfD+Zs>
+# 17  pop3-login: Disconnected (no auth attempts in 120 secs): user=<>, rip=2.2.2.2, lip=5.5.5.5, TLS, session=<CMUdzuwP3wBZjk8I>
+# 18  imap-login: Disconnected: Inactivity (no auth attempts in 180 secs): user=<>, rip=2.2.2.2, lip=5.5.5.5, TLS handshaking, session=<6F6rxuwPogAuetGx>
+# 19  pop3-login: Disconnected: Inactivity (no auth attempts): rip=2.2.2.2, lip=5.5.5.5, TLS handshaking
+# 20  pop3-login: Disconnected (no auth attempts in 60 secs): user=<>, rip=2.2.2.2, lip=5.5.5.5, TLS handshaking: Disconnected, session=</vJpquwPugAuetLh>
+# 21  pop3-login: Disconnected (no auth attempts in 0 secs): user=<>, rip=2.2.2.2, lip=5.5.5.5, TLS handshaking: SSL_accept() failed: error:140760FC:SSL routines:SSL23_GET_CLIENT_HELLO:unknown protocol, session=<N296hewPSgAueh8K>
+DOVECOT_DISCONNECT5 %{WORD:proto}-login: (%{TWO_WORDS:conn_status}|%{WORD:conn_status})(%{DATA})? \(%{DATA:status_message}\):( user=<>,)? rip=%{IP:rip}, lip=%{IP:lip}, %{WORD:crypto}(\,|:)?( %{DATA:error},)?( session=<%{DATA:session}>)?
+# 22  pop3-login: Disconnected (no auth attempts): rip=2.2.2.2, lip=5.5.5.5, TLS handshaking: SSL_accept() failed: error:150760FC:SSL routines:SSL23_GET_CLIENT_HELLO:unknown protocol
+# 23  pop3-login: Aborted login (no auth attempts): rip=2.2.2.2, lip=5.5.5.5
+# 24  pop3-login: Aborted login (no auth attempts in 0 secs): user=<>, rip=2.2.2.2, lip=5.5.5.5, session=<Q4nfkMAPTQDBAhKu>
+DOVECOT_DISCONNECT6 %{WORD:proto}-login: (%{TWO_WORDS:conn_status}|%{WORD:conn_status}) \(%{DATA:status_message}\): (user=<(%{USERNAME:user})?>, )?rip=%{IP:rip}, lip=%{IP:lip}(, session=<%{DATA:session}>)?(, %{GREEDYDATA:error})?
+DOVECOT_DISCONNECT (%{DOVECOT_DISCONNECT1}|%{DOVECOT_DISCONNECT2}|%{DOVECOT_DISCONNECT3}|%{DOVECOT_DISCONNECT4}|%{DOVECOT_DISCONNECT5}|%{DOVECOT_DISCONNECT6})
+### PROXY
+# Started proxying
+# 25  imap-login: proxy(username): started proxying to 2.2.2.2:143: user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, secured, session=<GKEBFAwQMgDBAgFf>
+# 26  pop3-login: proxy(username): started proxying to 2.2.2.2:110: user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, session=<udMDFAwQWQDU6/2a>
+# 27  imap-login: proxy(username): started proxying to 2.2.2.2:143: user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, TLS, session=<LGL0EwwQOQBOmTSo>
+DOVECOT_PROXY1 %{WORD:proto}-login: %{WORD:proxy}\(%{USEROREMAIL}\): started %{WORD:proxy_start} to %{IPORHOST:proxyto_host}:%{POSINT:proxyto_port}: user=<(%{USERNAME}(@%{HOSTNAME})?)?>, method=%{WORD:method}, rip=%{IP:rip}, lip=%{IP:lip}(, %{WORD:crypto})?, session=<%{DATA:session}>
+# Disconnecting
+# 28  pop3-login: proxy(username): disconnecting 2.2.2.2 (Disconnected by server): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, TLS, session=<gg7JEwwQ6QDBTZ2t>
+# 29  pop3-login: proxy(username): disconnecting 2.2.2.2 (Disconnected by server): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, session=<9J/3EwwQFwDZSF8F>
+# 30  imap-login: proxy(username): disconnecting 2.2.2.2 (Disconnected by server): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, secured, session=<GKEBFAwQMgDBAgFf>
+# 31  imap-login: proxy(username): disconnecting 2.2.2.2 (Disconnected by client: Connection reset by peer): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, TLS, session=<tk+T3O4PowDULq55>
+# 32  pop3-login: proxy(username@example.com): disconnecting 2.2.2.2 (Disconnected by server): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, session=<9J/3EwwQFwDZSF8F>
+DOVECOT_PROXY2 %{WORD:proto}-login: %{WORD:proxy}\(%{USEROREMAIL}\): %{WORD:conn_status} %{IPORHOST} \(%{DATA:status_message}\): user=<(%{USERNAME}(@%{HOSTNAME})?)?>, method=%{WORD:method}, rip=%{IP:rip}, lip=%{IP:lip}(, (session=<%{DATA:session}>|%{WORD:crypto}, session=<%{DATA:session}>|%{WORD:crypto}))?
+DOVECOT_PROXY3 %{WORD:proto}-login: %{WORD:proxy}\(%{USEROREMAIL}\): %{WORD:conn_status} %{IP:rip}
+DOVECOT_PROXY (%{DOVECOT_PROXY1}|%{DOVECOT_PROXY2}|%{DOVECOT_PROXY3})
+### EXCEEDED
+# Max number of connections is exceeded
+#  33 imap-login: Maximum number of connections from user+IP exceeded (mail_max_userip_connections=50): user=<username>, method=PLAIN, rip=2.2.2.2, lip=5.5.5.5, secured, session=<at1XQPAPJABUFPIj>
+DOVECOT_EXCEEDED %{WORD:proto}-login: %{DATA:conn_status} \(%{DATA:status_message}\): user=<(%{USERNAME:user})?>, method=%{WORD:method}, rip=%{IP:rip}, lip=%{IP:lip}(, (session=<%{DATA:session}>|%{WORD:crypto}, session=<%{DATA:session}>|%{WORD:crypto}))?
+### LMTP logs
+# 34  lmtp(32352): Disconnect from local: Successful quit
+# 35  lmtp(32347): Connect from local
+# 36  lmtp(username): iUi8BBUI2FRbfgAAA15QOA: msgid=<E1YKcnl-0001q3-UM@example.com>: saved mail to INBOX
+DOVECOT_LMTP %{WORD:proto}\(%{USERNAME:user}\): (%{WORD:session}: )?(msgid=<%{DATA:msgid}>: )?%{GREEDYDATA:status_message}
+### Indexer
+# 37  indexer-worker(username): Indexed 10 messages in mail/Sent Messages
+DOVECOT_INDEXER %{WORD:proto}-worker\(%{USERNAME:user}\): Indexed %{NUMBER:msg_count} messages in %{GREEDYDATA:folder}
+DOVECOT (%{DOVECOT_LOGIN}|%{DOVECOT_DISCONNECT}|%{DOVECOT_PROXY}|%{DOVECOT_INDEXER}|%{DOVECOT_LMTP}|%{DOVECOT_EXCEEDED})
+
+
+### Squid
+SQUID %{NUMBER:timestamp}\s+%{NUMBER:response_time} %{IP:src_ip} (:?|%{NOTSPACE:src_mac})\s*%{WORD:squid_request_status}/%{NUMBER:http_status_code} %{NUMBER:reply_size_include_header}\s*(:?|%{NOTSPACE:http_method})\s*(:?|(%{WORD:http_protocol}://%{HOSTNAME:dst_host}%{NOTSPACE:request_url})|%{NOTSPACE:request_url}) %{NOTSPACE:user} %{WORD:squid}/(?:-|%{IP:dst_ip}|%{NOTSPACE}) %{NOTSPACE:content_type}\s*("%{GREEDYDATA:agent}")?
