@@ -1,7 +1,7 @@
 # EXEHDA-ISSA technologies
 Technologies configurations used in EXEHDA-ISSA prototype
 
-The intent of this repository is to share the configuration files used in the EXEHDA-ISSA scenario aming to provide facilities to the replication of this scenario.
+The intent of this repository is to share the configuration files used in the EXEHDA-ISSA scenario aming to ease the replication of the scenarios presented in the article under review.
 
 I do not claim ownership on all these configurations.
 Some of them were found on Google as is and some were fixed by me to address issudes like in normalization and contextualization.
