@@ -1,1 +1,3 @@
+# logstash configurations
+
 The yml configuration for elasticsearch is disposed here especially to demonstrate how the ReadOnlyREST plugin (https://readonlyrest.com/) was configured to realize the kibana authentication through Shibboleth (https://www.shibboleth.net/).
