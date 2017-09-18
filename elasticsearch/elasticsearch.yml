@@ -126,13 +126,13 @@ readonlyrest:
       indices: ["devops-*"]
       actions: ["indices:data/read/*", "indices:admin/mappings/*", "indices:admin/get"]
 
-	# Kibana authentication
+    # Kibana authentication
     - name: "::KIBANA-SRV::"
       auth_key: kibana:kibana
       verbosity: error # don't log successful request
       type: allow
 
-	# Shibboleth
+    # Shibboleth
     proxy_auth_configs:
     - name: "proxy1"
       user_id_header: "Shib-Person" # default X-Forwarded-User for Shibboleth
